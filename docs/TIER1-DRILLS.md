@@ -16,7 +16,7 @@ Lab reference:
 
 ---
 
-## Tier A — Drill on data you already have
+## Tier A Drill on data you already have
 
 ### Drill 1 Port scan, cold and timed
 - **Do:** Open `portscan.pcap` with no notes. Answer the three questions who is the
