@@ -1,8 +1,8 @@
-# Environment Setup — Capture Host (JAMES-VM)
+# Environment Setup Capture Host (JAMES-VM)
 
 This document records how the packet-capture environment was built on the target
 Windows host for the `wireshark-pcap-deep-analysis-lab`. Capture is performed
-**victim-side** — on the host receiving the attack traffic — which reflects how a
+**victim-side** on the host receiving the attack traffic which reflects how a
 real sensor or endpoint sees traffic, rather than capturing from the attacker box.
 
 ## Host details
@@ -19,7 +19,7 @@ real sensor or endpoint sees traffic, rather than capturing from the attacker bo
 
 ---
 
-## Step 1 — Install Wireshark (winget)
+## Step 1 Install Wireshark (winget)
 
 ```powershell
 winget install WiresharkFoundation.Wireshark
@@ -31,7 +31,7 @@ Silicon). This provides the GUI plus the CLI tooling used throughout the lab:
 
 ---
 
-## Step 2 — Verify capture capability (and find the gotcha)
+## Step 2 Verify capture capability (and find the gotcha)
 
 ```powershell
 tshark -D
@@ -47,7 +47,7 @@ capture packets.
 
 The winget package installed Wireshark but its bundled **Npcap** sub-installer did
 not run, so the Windows packet-capture driver was absent. Only the ETW reader was
-listed — no real network interfaces.
+listed no real network interfaces.
 
 > **Key lesson:** Wireshark can *read* existing PCAPs without Npcap, but it
 > **cannot capture live traffic** without it. Npcap is the Windows packet-capture
@@ -56,7 +56,7 @@ listed — no real network interfaces.
 
 ---
 
-## Step 3 — Install Npcap separately
+## Step 3 Install Npcap separately
 
 Downloaded the free installer from **https://npcap.com** and ran it with defaults:
 
@@ -81,7 +81,7 @@ the full path.
 
 ---
 
-## Step 5 — Re-verify interfaces
+## Step 5 Re-verify interfaces
 
 Open a fresh PowerShell:
 
@@ -102,9 +102,9 @@ tshark -D
 
 ---
 
-## Step 6 — Identify the correct capture interface
+## Step 6 Identify the correct capture interface
 
-Do not assume by name — confirm by IP:
+Do not assume by name confirm by IP:
 
 ```powershell
 ipconfig
@@ -116,7 +116,7 @@ and were disregarded.
 
 ---
 
-## Step 7 — Live interface test
+## Step 7 Live interface test
 
 Confirm interface 4 actually sees traffic before relying on it for a real capture:
 
@@ -124,7 +124,7 @@ Confirm interface 4 actually sees traffic before relying on it for a real captur
 tshark -i 4 -a duration:5
 ```
 
-Captured 29 packets in 5 seconds (background host traffic — Splunk Universal
+Captured 29 packets in 5 seconds (background host traffic Splunk Universal
 Forwarder chatter and gateway probes), confirming the interface was live and
 correctly bound.
 
