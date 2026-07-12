@@ -24,7 +24,7 @@ what?*
 ## Universal first moves (start every investigation here)
 
 Before filtering, orient yourself. **Statistics → Conversations** shows who is
-talking to whom across the whole capture — this is the true first move.
+talking to whom across the whole capture this is the true first move.
 
 | Filter | What it answers |
 |---|---|
