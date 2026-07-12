@@ -50,11 +50,11 @@ many ports.
 |---|---|
 | `tcp.flags.syn == 1 && tcp.flags.ack == 0 && ip.src == <attacker>` | The "knocks" — bare SYNs from the scanner. Many, across different ports = scan |
 | `tcp.flags.syn == 1 && tcp.flags.ack == 1 && ip.src == <victim>` | Victim's SYN-ACK replies. **Each one = an open port.** Tells you what the attacker found |
-| `tcp.flags.reset == 1` | RST storm from closed ports answering "no" — corroborates the sweep breadth |
+| `tcp.flags.reset == 1` | RST storm from closed ports answering "no" corroborates the sweep breadth |
 
 **Count unique ports swept (the scan, as one number):**
 ```
-tshark -r capture.pcap -Y "tcp.flags.syn==1 && tcp.flags.ack==0 && ip.src==<attacker>" -T fields -e tcp.dstport | Sort-Object -Unique | Measure-Object -Line
+tshark -r capture.pcap -Y "tcp.flags.syn==1 && tcp.flags.ack==0 && ip.src==<attacker>" -T fields -e tcp.dstport | Sort-Object -Unique | Measure-Object Line
 ```
 
 **The tell:** SYNs fanning out across many destination ports, few SYN-ACKs back,
