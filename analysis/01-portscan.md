@@ -5,7 +5,7 @@ back to detection logic.
 
 | Field | Value |
 |---|---|
-| Technique | T1046 — Network Service Discovery |
+| Technique | T1046 Network Service Discovery |
 | Attacker | Kali Linux, 192.168.64.15 |
 | Target | Windows 11 (JAMES-VM), 192.168.64.17 |
 | Capture | `portscan.pcap` 4,136 packets, 372 kB, ~90s window |
