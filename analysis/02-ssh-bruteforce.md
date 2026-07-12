@@ -6,7 +6,7 @@ encrypted, packets flag the attack but cannot prove the breach on their own.
 
 | Field | Value |
 |---|---|
-| Technique | T1110 — Brute Force |
+| Technique | T1110 Brute Force |
 | Attacker | Kali Linux, 192.168.64.15 |
 | Target | Ubuntu Server (wazuh-manager), 192.168.64.12 |
 | Capture | `ssh-bruteforce.pcap` 465 packets, 86 kB, ~74s window |
