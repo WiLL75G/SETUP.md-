@@ -26,7 +26,7 @@ The constant across every drill the three questions:
 
 The highest-frequency real alert. Brute force = many attempts on one account; spray =
 few attempts across many accounts. Same triage shape. Drill it on **both** platforms so
-you know how it looks in Linux auth logs and in Windows Security logs — the pattern is
+you know how it looks in Linux auth logs and in Windows Security logs the pattern is
 the same, the evidence differs.
 
 ### Linux side (Ubuntu / wazuh-manager, SSH - 192.168.64.12) VERIFIED WORKING
@@ -68,7 +68,7 @@ index=main host=wazuh-manager sourcetype=linux_secure ("sudo" OR "session opened
 ```
 Captures sudo escalation (with the exact `COMMAND=` run), new users, and cron.
 
-### Windows side (JAMES-VM — 192.168.64.17) — pipeline VERIFIED
+### Windows side (JAMES-VM 192.168.64.17) pipeline VERIFIED
 **Where it shows up:** `sourcetype=WinEventLog:Security` in Splunk. Unlike Linux,
 Windows extracts fields **natively** `Account_Name` and `Source_Network_Address`
 populate without a rex.
@@ -85,7 +85,7 @@ index=* host=JAMES-VM sourcetype=WinEventLog:Security EventCode=4625
 > **Verified state + hardening finding (Jul 12 2026):** the Windows Security pipeline is
 > confirmed and carries 4625/4624/4688/4672 with native field extraction. Real 4625
 > attacker data exists (failed logons for `socdemo` and `-` from 192.168.64.15), so
-> Monday-Windows is drillable now — just thin.
+> Monday-Windows is drillable now just thin.
 >
 > Generating a *fresh, richer* Windows brute force proved constrained, and that
 > constraint is itself a defender's finding worth knowing:
@@ -95,7 +95,7 @@ index=* host=JAMES-VM sourcetype=WinEventLog:Security EventCode=4625
 > - **RDP (3389) does not bind** even after enabling the service, firewall rule, and
 >   registry keys (`fDenyTSConnections=0`, `fEnableWinStation=1`, `PortNumber=3389`,
 >   `TermService`+`UmRdpService` both running, full reboot). `qwinsta` is absent on this
->   build — the RDP listener components appear incomplete on Build 26100. Deeper fix
+>   build the RDP listener components appear incomplete on Build 26100. Deeper fix
 >   (Windows Features / DISM) needed; not worth chasing mid-drill.
 >
 > **Takeaway:** "why is this Windows box hard to attack?" → "because it's hardened by
@@ -146,7 +146,7 @@ which combinations tell a story. Windows speaks in **EventCodes**; Linux speaks 
 **Workflow:**
 1. Narrow to the host + time window.
 2. Aggregate the relevant EventCode: `stats count by ...`.
-3. Read the logon **type** (Type 3 network, Type 10 RDP) — it changes the meaning.
+3. Read the logon **type** (Type 3 network, Type 10 RDP) it changes the meaning.
 4. Pivot: tie an account creation (4720) or privilege grant (4672) back to who did it
    and whether it was authorized/ticketed.
 5. Verdict: normal admin activity or malicious?
@@ -206,7 +206,7 @@ it executed and whether the host is compromised.
 
 **Workflow:**
 1. Read the alert: what rule fired, on which host, what process/file.
-2. Context: parent-child process chain — what launched it? (Sysmon EID 1)
+2. Context: parent-child process chain what launched it? (Sysmon EID 1)
 3. Decode: if PowerShell, pull the script block (EID 4104) and deobfuscate any encoded
    command.
 4. Determine execution + impact: did it run, what did it touch, was it contained?
