@@ -95,7 +95,7 @@ The exact SPL lives in the SPL cheat-sheet doc. This is the strategy for each.
   after the burst. `stats count by src_ip, user`, then look for the one that flips from
   fail to success.
 - **Verdict question:** *did they get in?* A success after many failures is the
-  compromise — escalate immediately.
+  compromise escalate immediately.
 
 ### 3. Suspicious / Anomalous Authentication T1078
 - **Fires from:** auth anomalies, off-hours logins, logins from unusual sources,
