@@ -4,7 +4,7 @@ Packet-level PCAP forensics: reconstructing attacks from raw capture alone, with
 SIEM safety net, then tying each finding back to SIEM and IDS detection logic. Built to
 close the packet-analysis gap in a detection-engineering portfolio.
 
-**Author:** William James ([@WiLL75G](https://github.com/WiLL75G)) · Detection engineer / SOC analyst
+**Author:** William Gokah ([@WiLL75G](https://github.com/WiLL75G)) · Detection engineer / SOC analyst
 
 ---
 
