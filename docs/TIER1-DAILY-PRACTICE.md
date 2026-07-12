@@ -61,7 +61,7 @@ index=main host=wazuh-manager sourcetype=linux_secure "Accepted password"
 | table _time, user, src_ip
 ```
 
-**Pivot after a compromise** — what did the session do?
+**Pivot after a compromise** what did the session do?
 ```spl
 index=main host=wazuh-manager sourcetype=linux_secure ("sudo" OR "session opened" OR "useradd")
 | table _time, _raw
