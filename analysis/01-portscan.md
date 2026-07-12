@@ -74,7 +74,7 @@ volume of RST responses, indicates a TCP port scan (T1046).
 
 This maps to **Suricata sid 1000001**, which alerts on the connection fan-out
 threshold. Reading SYN-ACKs proves what is open; counting SYNs-to-many-ports proves
-someone is scanning — the fan-out is the alert.
+someone is scanning the fan-out is the alert.
 
 ## The reusable pattern
 
