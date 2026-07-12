@@ -48,7 +48,7 @@ many ports.
 
 | Filter | Purpose |
 |---|---|
-| `tcp.flags.syn == 1 && tcp.flags.ack == 0 && ip.src == <attacker>` | The "knocks" — bare SYNs from the scanner. Many, across different ports = scan |
+| `tcp.flags.syn == 1 && tcp.flags.ack == 0 && ip.src == <attacker>` | The "knocks" bare SYNs from the scanner. Many, across different ports = scan |
 | `tcp.flags.syn == 1 && tcp.flags.ack == 1 && ip.src == <victim>` | Victim's SYN-ACK replies. **Each one = an open port.** Tells you what the attacker found |
 | `tcp.flags.reset == 1` | RST storm from closed ports answering "no" corroborates the sweep breadth |
 
