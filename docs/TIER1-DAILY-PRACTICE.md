@@ -22,7 +22,7 @@ The constant across every drill the three questions:
 
 ---
 
-## Monday — Brute Force / Password Spray (T1110) Linux + Windows
+## Monday Brute Force / Password Spray (T1110) Linux + Windows
 
 The highest-frequency real alert. Brute force = many attempts on one account; spray =
 few attempts across many accounts. Same triage shape. Drill it on **both** platforms so
@@ -70,9 +70,9 @@ Captures sudo escalation (with the exact `COMMAND=` run), new users, and cron.
 
 ### Windows side (JAMES-VM — 192.168.64.17) — pipeline VERIFIED
 **Where it shows up:** `sourcetype=WinEventLog:Security` in Splunk. Unlike Linux,
-Windows extracts fields **natively** — `Account_Name` and `Source_Network_Address`
+Windows extracts fields **natively** `Account_Name` and `Source_Network_Address`
 populate without a rex.
-- Failure: **EventCode 4625** (failed logon) — read the logon type and account.
+- Failure: **EventCode 4625** (failed logon) read the logon type and account.
 - **Success:** **EventCode 4624** (successful logon) after the burst.
 - Process activity: **4688** (process creation, high volume). Privilege: **4672**.
 
@@ -110,7 +110,7 @@ evidence: Linux = `auth.log` Failed/Accepted lines (needs rex), Windows = 4625 �
 
 ---
 
-## Tuesday — Phishing Email Triage (T1566)
+## Tuesday Phishing Email Triage (T1566)
 
 One of the most common Tier 1 tasks. The email is reported or flagged; you decide how
 dangerous it is and how far it spread.
@@ -128,11 +128,11 @@ targeted / clicked" scope is the part juniors forget.
 
 ---
 
-## Wednesday — Host Log Triage, Windows AND Linux (T1078 / T1059 / persistence)
+## Wednesday Host Log Triage, Windows AND Linux (T1078 / T1059 / persistence)
 
 Pattern-heavy and recurring. The skill is knowing what each log source records and
 which combinations tell a story. Windows speaks in **EventCodes**; Linux speaks in
-**log-file text**. Drill both — an MSSP box is a mix of both.
+**log-file text**. Drill both an MSSP box is a mix of both.
 
 ### Side A Windows Event Logs (JAMES-VM)
 
@@ -199,7 +199,7 @@ the same story in both dialects.
 
 ---
 
-## Thursday — EDR / Endpoint Alert Triage (Wazuh; T1059 / T1204 / persistence)
+## Thursday EDR / Endpoint Alert Triage (Wazuh; T1059 / T1204 / persistence)
 
 One of the highest-volume real alert types. An endpoint detection fires; you decide if
 it executed and whether the host is compromised.
@@ -217,7 +217,7 @@ it's malicious, plus name the host to isolate.
 
 ---
 
-## Friday — Threat Hunting (proactive; multi-technique)
+## Friday Threat Hunting (proactive; multi-technique)
 
 Not reactive alert triage a hypothesis-driven hunt. Different loop, worth its own
 rep because it builds the "find it before it alerts" instinct.
@@ -235,7 +235,7 @@ template, and you document a "found nothing" hunt as rigorously as a hit.
 
 ---
 
-## Weekend — Cold Reps (the real test)
+## Weekend Cold Reps (the real test)
 
 Work data you did **not** generate. The NetSupport RAT PCAP, then fresh captures from
 Malware-Traffic-Analysis.net. Timed, no notes, no hints.
