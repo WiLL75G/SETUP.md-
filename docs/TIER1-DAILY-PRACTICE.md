@@ -117,7 +117,7 @@ dangerous it is and how far it spread.
 
 **Workflow:**
 1. Header analysis: sender, reply-to, SPF/DKIM/DMARC results, sending IP.
-2. Payload: examine the URL or attachment (detonate/inspect safely — never click
+2. Payload: examine the URL or attachment (detonate/inspect safely never click
    live). Extract the destination domain / file hash.
 3. IOC extraction: sender address, sending IP, URL/domain, attachment hash.
 4. Scope: **who else received it?** Search mail logs for the same sender/subject/URL.
