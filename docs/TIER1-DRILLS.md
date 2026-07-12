@@ -43,7 +43,7 @@ Lab reference:
 
 ## Tier B Skills named but not yet drilled
 
-### Drill 4 — Follow Stream until it's reflex
+### Drill 4 Follow Stream until it's reflex
 - **Do:** Generate a cleartext FTP or HTTP login between VMs, capture it, and
   reconstruct the credentials via right-click → Follow → TCP/HTTP Stream.
 - **Success when:** "right-click → Follow → read the creds" is automatic and you can
