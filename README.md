@@ -9,7 +9,7 @@
 
 Packet level attack reconstruction. Four attacks captured victim side and analysed from raw packets alone, with no SIEM safety net, then tied back to SIEM and IDS detection logic. Built to close the packet analysis gap in a detection engineering portfolio.
 
-Author: William James ([@WiLL75G](https://github.com/WiLL75G)) . Detection engineer and SOC analyst
+Author: William Gokah ([@WiLL75G](https://github.com/WiLL75G)) . Detection engineer and SOC analyst
 
 ---
 
