@@ -41,7 +41,7 @@ packets with no payload is scanning, not communication.
 
 ## Display filters used and what the packets revealed
 
-**Open ports — the victim's SYN-ACK replies:**
+**Open ports the victim's SYN-ACK replies:**
 ```
 tcp.flags.syn == 1 && tcp.flags.ack == 1 && ip.src == 192.168.64.17
 ```
