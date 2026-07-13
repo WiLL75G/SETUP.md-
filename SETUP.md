@@ -65,7 +65,7 @@ Downloaded the free installer from **https://npcap.com** and ran it with default
 
 ---
 
-## Step 4 — Add Wireshark to the system PATH
+## Step 4 Add Wireshark to the system PATH
 
 Run from an **elevated** PowerShell:
 
